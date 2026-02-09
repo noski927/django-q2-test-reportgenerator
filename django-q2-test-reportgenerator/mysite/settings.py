@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django_q",
+    "polls",
 ]
 
 MIDDLEWARE = [
@@ -116,3 +117,29 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = "static/"
+
+Q_CLUSTER = {
+    "name": "DjangoQ",
+    "workers": 4,  # Number of worker processes
+    "timeout": 30,  # Worker timeout in seconds
+    "retry": 60,  # Retry failed tasks after 60 seconds
+    "queue_limit": 50,  # Maximum tasks in queue
+    "bulk": 10,  # Process up to 10 tasks at once
+    "orm": "default",  # Use Django's ORM for the message broker
+    "table": "django_q_schedule",  # Optional: Database table name for tasks
+    "save_limit": 250,  # Optional: Task result retention (seconds)
+    "catch_up": False,  # Optional: Catch up on missed schedules
+    "poll": 1.0,  # Optional: How often to check for new tasks (seconds)
+    "silent": False,  # Optional: Silent mode (less logging)
+    "max_attempts": 0,  # Optional: Maximum attempts for failed tasks 0 means unlimited
+    "daemonize": True,
+    ##########
+    ##########
+    ##########
+    # Redis backend (optional, but recommended for production)
+    # 'redis': {
+    #     'host': '127.0.0.1',
+    #     'port': 6379,
+    #     'db': 0,
+    # },
+}
