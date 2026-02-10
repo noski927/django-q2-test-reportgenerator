@@ -17,17 +17,17 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.http import require_http_methods
 from django_q.tasks import async_task
 
-from .models import Report
+from .models import UserLog
 from .tasks import build_report
 
 
 @require_http_methods(["GET", "POST"])
 def report_page(request, report_id=None):
     if request.method == "POST":
-        report = Report.objects.create(title="report")
+        report = UserLog.objects.create(title="report")
         async_task(build_report, report_id=report.id)
         return redirect("report_page_with_id", report_id=report.id)
     report = None
     if report_id is not None:
-        report = get_object_or_404(Report, id=report_id)
+        report = get_object_or_404(UserLog, id=report_id)
     return render(request, "reports/page.html")
