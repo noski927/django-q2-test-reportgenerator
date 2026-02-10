@@ -39,7 +39,7 @@ dependencies:
   - ncurses=6.5=h5e97a16_3
   - openssl=3.6.1=hd24854e_1
   - packaging=26.0=pyhcf101f3_0
-  - pip=26.0=pyh8b19718_0
+  - pip
   - pluggy=1.6.0=pyhf9edf01_1
   - prompt-toolkit=3.0.52=pyha770c72_0
   - prompt_toolkit=3.0.52=hd8ed1ab_0
