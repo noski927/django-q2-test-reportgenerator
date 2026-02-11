@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Отчёты</title>
+</head>
+
+<body>
+    <h1>Домашняя страничка</h1>
+    <form method="post" action="{% url 'polls-create-task-15sec' %}">
+        {% csrf_token %}
+        <button type="submit">Запустить новую задачу Q2 (15 сек)</button>
+    </form>
+    <hr>
+    <form method="post" action="{% url 'polls-create-10-tasks-15sec' %}">
+        {% csrf_token %}
+        <button type="submit">Запустить 10 новых задач Q2 (15 сек)</button>
+    </form>
+</body>
+
+</html>

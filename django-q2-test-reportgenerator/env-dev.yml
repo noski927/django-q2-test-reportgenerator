@@ -1,0 +1,49 @@
+name: btc-wizard-q2
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - django=5.1
+  - djangorestframework=3.14
+  - django-extensions=3.2
+
+  # type checking
+  - mypy=1.11
+  - django-stubs=5.0
+  # TODO: update after numpy-pandas update
+  - pandas-stubs=2.0
+  - djangorestframework-stubs=3.15
+  - types-markdown=3.6
+  # code formating 
+  # - ruff=0.14
+  # pre-commit
+  # - pre-commit=3.8
+
+  - django-filter=24.3
+  - django-q2
+  - ipykernel=6.29
+  - ipython=8.26
+  - jupyter=1.0
+  - markdown=3.6 # Markdown support for the browsable API.
+  - matplotlib=3.9 # Plots in pdf (temporary)
+  - numpy=1.24
+  - pandas=1.5
+  - plotly=5.23
+  - psycopg2=2.9
+  - pypdf2=2.11
+  - requests=2.32
+  - scipy=1.14
+  - weasyprint=62.3
+  - ghostscript=9.54
+  - openpyxl=3.1
+  - gunicorn=23.0
+  - python-ldap=3.4
+  - pillow=10.4
+  - pyfaidx=0.8.1
+  - pytabix=0.1
+  - pip:
+    - pysam==0.22.1
+    - django-auth-ldap==4.8.0
+    - tblib==3.0.0
+    - sqlalchemy==2.0.44

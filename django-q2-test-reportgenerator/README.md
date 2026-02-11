@@ -24,10 +24,6 @@ python manage.py migrate
 
 `python manage.py qcluster &`     <<< run in background
 
-    <<< визуалзация запущеных тасков
+`python manage.py qmonitor`   <<< визуалзация запущеных тасков
 
 ![img](Снимок экрана 2026-02-09 в 18.38.39.jpg)
-
-python manage.py makemigrations polls
-
-python manage.py migrate

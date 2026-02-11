@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <title>User Log</title>
+</head>
+
+<body>
+    <h1>User Logs</h1>
+<table border="1">
+  <thead>
+    <tr>
+      <th scope="col" class="text-center">Дата</th>
+      <th scope="col" class="text-center">Имя</th>
+      <th scope="col" class="text-center">Статус</th>
+      <th scope="col" class="text-center">task_start_date</th>
+      <th scope="col" class="text-center">task_end_date</th>
+      <th scope="col" class="text-center">Прогресс</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for log in object_list %}
+    <tr>
+      <td>{{ log.c_date }}</td>
+      <td>{{ log.name }}</td>
+      <td>{{ log.status }}</td>
+      <td>{{ log.task_start_date }}</td>
+      <td>{{ log.task_end_date }}</td>
+      <td>{{ log.progress_percent }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</body>
+
+</html>
